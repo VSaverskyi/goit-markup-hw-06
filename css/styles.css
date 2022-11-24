@@ -544,14 +544,23 @@ body {
     border-radius: 4px;
     background-color: transparent;
     padding-left: 30px;
+    transition: border-color 250ms var(--tra-cubic);
 }
 .modal-icon {
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    fill: var(--main-color)
+    fill: var(--main-color);
+    transition: fill 250ms var(--tra-cubic);
 }
+.modal-input:focus {
+    border-color: var(--color-blue);
+}
+.modal-input:focus + .modal-icon {
+    fill: var(--color-blue)
+}
+
 .modal-comment {
     width: 100%;
     height: 120px;
@@ -560,6 +569,7 @@ body {
     border-radius: 4px;
     outline: transparent;
     resize: none;
+    transition: border-color 250ms var(--tra-cubic);
 }
 .modal-comment::placeholder {
     font-weight: 400;
@@ -567,6 +577,9 @@ body {
     line-height: 1.17;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
+}
+.modal-comment:focus {
+    border-color: var(--color-blue);
 }
 
 .backdrop.is-hidden .modal {
