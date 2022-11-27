@@ -76,19 +76,49 @@
           <h1 class="visually-hiden">Портфоліо</h1>
           <ul class="portfolio-filters-list">
             <li class="portfolio-filters-item">
-              <button class="portfolio-btn btn" type="button">Усі</button>
+              <input
+                type="radio"
+                class="filter-input visually-hiden"
+                name="filter"
+                id="all"
+              />
+              <label for="all" class="filter-btn">Усі</label>
             </li>
             <li class="portfolio-filters-item">
-              <button class="portfolio-btn btn" type="button">Веб-сайти</button>
+              <input
+                type="radio"
+                class="filter-input visually-hiden"
+                name="filter"
+                id="web-sites"
+              />
+              <label for="web-sites" class="filter-btn">Веб-сайти</label>
             </li>
             <li class="portfolio-filters-item">
-              <button class="portfolio-btn btn" type="button">Додатки</button>
+              <input
+                type="radio"
+                class="filter-input visually-hiden"
+                name="filter"
+                id="apps"
+              />
+              <label for="apps" class="filter-btn">Додатки</label>
             </li>
             <li class="portfolio-filters-item">
-              <button class="portfolio-btn btn" type="button">Дизайн</button>
+              <input
+                type="radio"
+                class="filter-input visually-hiden"
+                name="filter"
+                id="design"
+              />
+              <label for="design" class="filter-btn">Дизайн</label>
             </li>
             <li class="portfolio-filters-item">
-              <button class="portfolio-btn btn" type="button">Маркетинг</button>
+              <input
+                type="radio"
+                class="filter-input visually-hiden"
+                name="filter"
+                id="marketing"
+              />
+              <label for="marketing" class="filter-btn">Маркетинг</label>
             </li>
           </ul>
           <ul class="portfolio-projects-list">
@@ -281,7 +311,7 @@
 
     <footer class="footer">
       <div class="container container-footer">
-        <div class="footer-address">
+        <div>
           <a class="logo footer-logo" href="./index.html" lang="en"
             ><span class="header-logo-web">Web</span>Studio</a
           >
@@ -304,7 +334,7 @@
             </ul>
           </address>
         </div>
-        <div class="footer-join-in">
+        <div>
           <h2 class="footer-title">приєднуйтесь</h2>
           <ul class="social-list">
             <li class="social-item">
@@ -357,6 +387,26 @@
             </li>
           </ul>
         </div>
+        <form class="footer-form">
+          <label for="subscribe-email" class="footer-title subscribe-label"
+            >Підпишіться на розсилку</label
+          >
+          <div class="subscribe-wrap">
+            <input
+              type="email"
+              class="subscribe-input"
+              name="subscribe-email"
+              id="subscribe-email"
+              placeholder="E-mail"
+            />
+            <button type="submit" class="subscribe-btn btn">
+              Підписатися
+              <svg class="subscribe-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
     </footer>
   </body>

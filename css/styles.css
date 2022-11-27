@@ -143,6 +143,7 @@ body {
   display: block;
   background-color: var(--second-link-color);
   border-radius: 2px;
+  left: 0;
   bottom: 0;
 }
 
@@ -431,7 +432,7 @@ body {
 
 .container-footer {
   display: flex;
-  gap: 93px;
+  justify-content: space-between;
   align-items: baseline;
 }
 
@@ -479,11 +480,64 @@ body {
   fill: var(--hover-icon-color);
 }
 
+.footer-form {
+  display: flex;
+  flex-direction: column;
+}
+.subscribe-label {
+  font-weight: 700;
+}
+.subscribe-wrap {
+  display: flex;
+  gap: 12px;
+}
+.subscribe-input {
+  min-width: 358px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 15px 16px;
+  color: var(--color-white);
+}
+.subscribe-input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.subscribe-btn {
+  min-width: 200px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  background-color: var(--color-blue);
+  color: var(--first-btn-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 250ms var(--tra-cubic);
+}
+.subscribe-icon {
+  fill: var(--first-btn-color);
+}
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--color-blue-dark);
+}
+
 /* -------Modal------- */
 
 .backdrop {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
@@ -554,7 +608,9 @@ body {
 .modal-input:focus + .modal-icon {
   fill: var(--color-blue);
 }
-
+.comment-field {
+  margin-bottom: 20px;
+}
 .modal-comment {
   width: 100%;
   height: 120px;
@@ -608,6 +664,66 @@ body {
   fill: var(--hover-btn-color);
 }
 
+.modal-check-field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.check-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--color-gray);
+  display: flex;
+  align-items: center;
+}
+.check-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--main-color);
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
+}
+.modal-check:checked + .check-text span {
+  background-color: var(--color-blue);
+  border: none;
+  fill: var(--color-white);
+}
+.modal-check:focus + .check-text span {
+  border-color: var(--color-blue);
+}
+.check-link {
+  color: var(--second-link-color);
+}
+
+.modal-btn {
+  min-width: 200px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  background-color: var(--color-blue);
+  color: var(--first-btn-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 52px;
+  margin: 0 auto;
+  display: block;
+  transition: background-color 250ms var(--tra-cubic);
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--color-blue-dark);
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -623,26 +739,36 @@ body {
   margin-bottom: 50px;
 }
 
-.portfolio-btn {
-  background-color: var(--color-portfolio-btn);
-  border-radius: 4px;
+.filter-input {
+}
+.filter-btn {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
-  text-align: center;
   letter-spacing: 0.03em;
   color: var(--second-btn-color);
+  background-color: var(--color-portfolio-btn);
+  border-radius: 4px;
   padding: 6px 22px;
+  display: block;
   transition: background-color 250ms var(--tra-cubic),
-    color 250ms var(--tra-cubic), box-shadow 250ms var(--tra-cubic);
+    color 250ms var(--tra-cubic), box-shadow 250ms var(--tra-cubic),
+    outline 250ms var(--tra-cubic);
 }
-.portfolio-btn:hover,
-.portfolio-btn:focus {
+.filter-input:checked + .filter-btn {
   background-color: var(--hover-btn-color);
   color: var(--first-btn-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+.filter-input:focus + .filter-btn {
+  outline: 1px solid var(--color-black);
+}
+.filter-btn:hover {
+  cursor: pointer;
+  outline: 1px solid var(--color-black);
+}
+
 .portfolio-projects-list {
   display: flex;
   flex-wrap: wrap;
