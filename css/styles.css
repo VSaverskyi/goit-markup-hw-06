@@ -511,7 +511,7 @@ body {
 .subscribe-input:hover,
 .subscribe-input:focus {
   border-color: var(--color-blue);
-  outline: none;
+  outline: transparent;
 }
 .subscribe-btn {
   min-width: 200px;
